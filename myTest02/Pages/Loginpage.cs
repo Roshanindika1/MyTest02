@@ -1,21 +1,21 @@
 ﻿using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace myTest02
+namespace myTest02.Pages
 {
-    internal class Program
+    internal class Loginpage
     {
-        static void Main(string[] args)
+        public void loginTM(IWebDriver driver)
         {
-            //Open the chrome brower
-            IWebDriver driver = new ChromeDriver();
-            driver.Manage().Window.Maximize();
-
+            
 
             //Launch the Turn up Portal
             driver.Navigate().GoToUrl("http://horse.industryconnect.io/Account/Login?ReturnUrl=%2f");
-            
 
             //Identify username text box and enter a valid username
             IWebElement usernameTextbox = driver.FindElement(By.Id("UserName"));
@@ -44,7 +44,6 @@ namespace myTest02
             {
                 Console.WriteLine("Login fail, Test failed");
             }
-
 
         }
     }
